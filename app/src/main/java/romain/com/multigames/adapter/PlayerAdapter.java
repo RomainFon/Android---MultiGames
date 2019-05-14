@@ -16,6 +16,7 @@ import java.util.ArrayList;
 
 import romain.com.multigames.MainActivity;
 import romain.com.multigames.R;
+import romain.com.multigames.manager.PlayerManager;
 import romain.com.multigames.model.Player;
 import romain.com.multigames.utils.ActivityUtils;
 
@@ -40,13 +41,14 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
-        Player player = players.get(position);
+        final Player player = players.get(position);
         viewHolder.firstName.setText(player.getFirstname());
         viewHolder.lastname.setText(player.getLastname());
         Picasso.get().load(player.getPicture()).into(viewHolder.image);
         viewHolder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                PlayerManager.getInstance().setPlayer(player);
                 ActivityUtils.launchActivity(activity, MainActivity.class);
             }
         });

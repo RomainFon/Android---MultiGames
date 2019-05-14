@@ -17,6 +17,7 @@ import java.util.Objects;
 import romain.com.multigames.EndGameActivity;
 import romain.com.multigames.MainActivity;
 import romain.com.multigames.R;
+import romain.com.multigames.manager.PlayerManager;
 import romain.com.multigames.utils.ActivityUtils;
 import romain.com.multigames.utils.OnSwipeTouchListener;
 import romain.com.multigames.utils.TimerUtils;

@@ -31,4 +31,7 @@
     <string name="ipac_game_more">C\'est plus</string>
     <string name="ipac_game_less">C\'est moins</string>
     <string name="ipac_game_btn_valide">Valider</string>
+
+    <string name="settings_deco">Deconnexion</string>
+    <string name="settings_change_player">Changer de joueur</string>
 </resources>
