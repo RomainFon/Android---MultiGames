@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_vertical"
+    android:background="@color/colorWhite"
+    android:id="@+id/drag_n_drop_linear_layout">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+
+        android:orientation="horizontal"
+        >
+
+        <View
+            android:id="@+id/dnd_zone_red"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="200dp"
+            android:background="@color/colorDndRed"/>
+        <View
+            android:id="@+id/dnd_zone_blue"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="200dp"
+            android:background="@color/colorDndBlue"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        >
+        <View
+            android:id="@+id/dnd_zone_green"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="@color/colorDndGreen"/>
+
+        <RelativeLayout
+            android:id="@+id/dnd_random_zone"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_timer_drag_n_drop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/fast_tap_time"
+                android:textSize="16sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/tv_drag_n_drop_score"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="wesh"
+                android:textSize="40sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_marginTop="40dp"
+                />
+
+            <TextView
+                android:id="@+id/shape_drag_n_drop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/circle_blue"
+                />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/dnd_zone_orange"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="@color/colorDndOrange"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="horizontal"
+        >
+
+        <View
+            android:id="@+id/dnd_zone_pink"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="200dp"
+            android:background="@color/colorDndPink"/>
+        <View
+            android:id="@+id/dnd_zone_yellow"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="200dp"
+            android:background="@color/colorDndYellow"/>
+    </LinearLayout>
+
+</LinearLayout>

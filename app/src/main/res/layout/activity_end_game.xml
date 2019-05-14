@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@color/colorWhite">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"/>
+
+    <TextView
+        android:id="@+id/activity_end_game"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="End"
+        android:textSize="30sp"
+        android:textColor="@color/colorPrimaryDark"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fast_tap_score_text_end"
+        android:textSize="30sp"
+        android:textColor="@color/colorPrimaryDark"/>
+
+    <TextView
+        android:id="@+id/activity_end_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="score"
+        android:textSize="30sp"
+        android:textColor="@color/colorPrimaryDark"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"/>
+
+    <Button
+        android:id="@+id/btn_menu_game"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_menu_game"
+        android:layout_marginBottom="20dp"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorWhite"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"/>
+
+    <Button
+        android:id="@+id/btn_leave_game"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_leave_game"
+        android:layout_marginBottom="20dp"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorWhite"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"/>
+
+</LinearLayout>

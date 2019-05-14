@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@color/colorWhite"
+    android:id="@+id/fast_tap_play_linear_layout">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:id="@+id/tv_timer_fast_tap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fast_tap_time"
+        android:textSize="20sp"
+        android:textColor="@color/colorPrimaryDark"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"/>
+
+    <TextView
+        android:id="@+id/tv_tap_or_longtap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fast_tap_type"
+        android:textSize="40sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginTop="40dp"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"/>
+
+
+    <TextView
+        android:id="@+id/tv_fasttap_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fast_tap_score"
+        android:textSize="40sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginTop="40dp"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+</LinearLayout>

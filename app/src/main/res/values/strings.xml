@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">MultiGame</string>
+    <string name="author_name">FONTAINE Romain</string>
+    <string name="welcome_message">Bienvenue !</string>
+    <string name="lastname_player">Nom</string>
+    <string name="firstname_player">Prénom</string>
+    <string name="old_player">Age</string>
+    <string name="location_player">Localisation</string>
+    <string name="btn_list_players">Joueurs</string>
+    <string name="btn_validate">Valider</string>
+    <string name="list_player_title">Liste des joueurs</string>
+
+    <string name="drag_n_drop_name">Drag N Drop</string>
+    <string name="swipe_name">Swipe</string>
+    <string name="fast_tap_name">Fast Tap</string>
+    <string name="ipac_games_name">MDS Game</string>
+    <string name="settings_name">Setting</string>
+
+    <string name="btn_start_game">Jouer</string>
+    <string name="btn_leave_game">Quitter</string>
+    <string name="btn_menu_game">Menu</string>
+
+    <string name="fast_tap_time">Temps restant %d secondes</string>
+    <string name="fast_tap_type">%d</string>
+    <string name="fast_tap_score">Score: %d</string>
+    <string name="fast_tap_score_end">%d</string>
+    <string name="fast_tap_score_text_end">Votre score est de</string>
+</resources>
