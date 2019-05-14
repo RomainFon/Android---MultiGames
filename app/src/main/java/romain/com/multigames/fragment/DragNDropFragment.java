@@ -16,6 +16,8 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import java.util.Objects;
+
 import romain.com.multigames.EndGameActivity;
 import romain.com.multigames.MainActivity;
 import romain.com.multigames.R;
@@ -25,7 +27,7 @@ import romain.com.multigames.utils.TimerUtils;
 public class DragNDropFragment extends Fragment {
 
     private int score = 0;
-    private View dnd_zone;
+    private View dndZone;
     private TextView shapeDrag;
     private View generalView;
     private GradientDrawable backgroundGradient;
@@ -37,15 +39,13 @@ public class DragNDropFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_drag_n_drop, container, false);
-        return view;
+        return inflater.inflate(R.layout.fragment_drag_n_drop, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         generalView = view;
-
         randomZone = view.findViewById(R.id.dnd_random_zone);
 
         TextView textViewTimer = view.findViewById(R.id.tv_timer_drag_n_drop);
@@ -53,7 +53,6 @@ public class DragNDropFragment extends Fragment {
         textViewScore.setText(String.valueOf(score));
 
         shapeDrag = view.findViewById(R.id.shape_drag_n_drop);
-        //randomPositionCircle(shapeDrag);
 
         shapeDrag.setTag("TextView");
         shapeDrag.setOnTouchListener(new View.OnTouchListener() {
@@ -84,38 +83,38 @@ public class DragNDropFragment extends Fragment {
         int nbRandom = (int)(Math.random() * 5); //nb entre 0 et 5
         switch (nbRandom) {
             case 0:
-                DragNDropFragment.this.dnd_zone = view.findViewById(R.id.dnd_zone_red);
+                DragNDropFragment.this.dndZone = view.findViewById(R.id.dnd_zone_red);
                 backgroundGradient.setColor(getResources().getColor(R.color.colorDndRed));
                 break;
             case 1:
-                DragNDropFragment.this.dnd_zone = view.findViewById(R.id.dnd_zone_blue);
+                DragNDropFragment.this.dndZone = view.findViewById(R.id.dnd_zone_blue);
                 backgroundGradient.setColor(getResources().getColor(R.color.colorDndBlue));
                 break;
             case 2:
-                DragNDropFragment.this.dnd_zone = view.findViewById(R.id.dnd_zone_green);
+                DragNDropFragment.this.dndZone = view.findViewById(R.id.dnd_zone_green);
                 backgroundGradient.setColor(getResources().getColor(R.color.colorDndGreen));
                 break;
             case 3:
-                DragNDropFragment.this.dnd_zone = view.findViewById(R.id.dnd_zone_orange);
+                DragNDropFragment.this.dndZone = view.findViewById(R.id.dnd_zone_orange);
                 backgroundGradient.setColor(getResources().getColor(R.color.colorDndOrange));
                 break;
             case 4:
-                DragNDropFragment.this.dnd_zone = view.findViewById(R.id.dnd_zone_yellow);
+                DragNDropFragment.this.dndZone = view.findViewById(R.id.dnd_zone_yellow);
                 backgroundGradient.setColor(getResources().getColor(R.color.colorDndYellow));
                 break;
             case 5:
-                DragNDropFragment.this.dnd_zone = view.findViewById(R.id.dnd_zone_pink);
+                DragNDropFragment.this.dndZone = view.findViewById(R.id.dnd_zone_pink);
                 backgroundGradient.setColor(getResources().getColor(R.color.colorDndPink));
                 break;
         }
 
-        DragNDropFragment.this.dnd_zone.setOnDragListener(new View.OnDragListener() {
+        DragNDropFragment.this.dndZone.setOnDragListener(new View.OnDragListener() {
             @Override
             public boolean onDrag(View v, DragEvent event) {
                 int dragAction = event.getAction();
-                if(dragAction == event.ACTION_DRAG_STARTED) {
+                if(dragAction == DragEvent.ACTION_DRAG_STARTED) {
                     return true;
-                }else if(dragAction == event.ACTION_DROP){
+                }else if(dragAction == DragEvent.ACTION_DROP){
                     randomColor(DragNDropFragment.this.generalView, DragNDropFragment.this.backgroundGradient);
                     randomPositionCircle(shapeDrag);
                     score ++;
@@ -123,7 +122,7 @@ public class DragNDropFragment extends Fragment {
                     shapeDrag.setVisibility(View.VISIBLE);
                     v.setOnDragListener(null);
                     return true;
-                }else if(dragAction == event.ACTION_DRAG_ENDED){
+                }else if(dragAction == DragEvent.ACTION_DRAG_ENDED){
                     shapeDrag.setVisibility(View.VISIBLE);
                     return true;
                 }
@@ -133,7 +132,7 @@ public class DragNDropFragment extends Fragment {
     }
 
     public void finishGame(){
-        ((MainActivity) getActivity()).viewPager.setPagingEnabled(true);
+        ((MainActivity) Objects.requireNonNull(getActivity())).viewPager.setPagingEnabled(true);
         getFragmentManager().popBackStack();
         Intent intent = new Intent(DragNDropFragment.this.getActivity(), EndGameActivity.class);
         intent.putExtra("game", this.getArguments().getString("game"));

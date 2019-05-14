@@ -15,6 +15,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.Objects;
+
 import romain.com.multigames.EndGameActivity;
 import romain.com.multigames.MainActivity;
 import romain.com.multigames.R;
@@ -37,8 +39,7 @@ public class IpacGameFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_ipac_game, container, false);
-        return view;
+        return inflater.inflate(R.layout.fragment_ipac_game, container, false);
     }
 
     @Override
@@ -97,7 +98,7 @@ public class IpacGameFragment extends Fragment {
     }
 
     public void finishGame(){
-        ((MainActivity) getActivity()).viewPager.setPagingEnabled(true);
+        ((MainActivity) Objects.requireNonNull(getActivity())).viewPager.setPagingEnabled(true);
         getFragmentManager().popBackStack();
         Intent intent = new Intent(IpacGameFragment.this.getActivity(), EndGameActivity.class);
         intent.putExtra("game", this.getArguments().getString("game"));

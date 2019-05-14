@@ -14,7 +14,7 @@ public abstract class TimerUtils {
     private TextView textViewTimer;
     private final Timer timer = new Timer();
 
-    public TimerUtils(TextView textViewTimer) {
+    protected TimerUtils(TextView textViewTimer) {
         this.textViewTimer = textViewTimer;
     }
 

@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.Objects;
+
 import romain.com.multigames.EndGameActivity;
 import romain.com.multigames.MainActivity;
 import romain.com.multigames.R;
@@ -33,8 +35,7 @@ public class FastTapPlayFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_fast_tap_play, container, false);
-        return view;
+        return inflater.inflate(R.layout.fragment_fast_tap_play, container, false);
     }
 
     @Override
@@ -148,7 +149,7 @@ public class FastTapPlayFragment extends Fragment {
     }
 
     public void finishGame(){
-        ((MainActivity) getActivity()).viewPager.setPagingEnabled(true);
+        ((MainActivity) Objects.requireNonNull(getActivity())).viewPager.setPagingEnabled(true);
         getFragmentManager().popBackStack();
         Intent intent = new Intent(FastTapPlayFragment.this.getActivity(), EndGameActivity.class);
         intent.putExtra("game", this.getArguments().getString("game"));

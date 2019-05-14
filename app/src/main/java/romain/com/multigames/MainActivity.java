@@ -1,6 +1,7 @@
 package romain.com.multigames;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -12,15 +13,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import romain.com.multigames.fragment.BeginGameFragment;
-import romain.com.multigames.fragment.DragNDropFragment;
-import romain.com.multigames.fragment.IpacGameFragment;
 import romain.com.multigames.fragment.SettingsFragment;
 import romain.com.multigames.view.SwipableViewPager;
 
 public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSelectedListener, ViewPager.OnPageChangeListener{
-
-    public static final String TAGFASTTAP = "Fast Tap";
-    public static final String TAGSWIPE = "Swipe";
 
     public SwipableViewPager viewPager;
     private TabLayout tabLayout;
@@ -55,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
                 return fragments.size();
             }
 
-            @Nullable
+            @NonNull
             @Override
             public CharSequence getPageTitle(int position) {
                 switch(position){

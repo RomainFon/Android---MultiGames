@@ -10,35 +10,34 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.Objects;
+
 import romain.com.multigames.MainActivity;
 import romain.com.multigames.R;
 import romain.com.multigames.utils.ActivityUtils;
 
 public class BeginGameFragment extends Fragment {
 
-    private Button buttonPlay;
-    private TextView tvGameName;
     private String gameName;
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_begin_game, container, false);
-        return view;
+        return inflater.inflate(R.layout.fragment_begin_game, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        tvGameName = view.findViewById(R.id.textview_game_name);
+        TextView tvGameName = view.findViewById(R.id.textview_game_name);
         tvGameName.setText(this.getArguments().getString("name"));
 
-        buttonPlay = view.findViewById(R.id.btn_play_game);
+        Button buttonPlay = view.findViewById(R.id.btn_play_game);
 
         buttonPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 gameName = BeginGameFragment.this.getArguments().getString("name");
-                ((MainActivity) getActivity()).viewPager.setPagingEnabled(false);
+                ((MainActivity) Objects.requireNonNull(getActivity())).viewPager.setPagingEnabled(false);
                 if(gameName.equals(getString(R.string.fast_tap_name)) || gameName.equals(getString(R.string.swipe_name))){
                     FastTapPlayFragment fragment = new FastTapPlayFragment();
                     Bundle bundle = new Bundle();
