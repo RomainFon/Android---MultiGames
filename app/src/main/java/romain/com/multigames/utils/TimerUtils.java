@@ -42,4 +42,7 @@ public abstract class TimerUtils {
     protected abstract void endGame();
 
 
+    public void stopTimer(){
+        TimerUtils.this.timer.cancel();
+    }
 }

@@ -28,6 +28,8 @@ public class FastTapPlayFragment extends Fragment {
     private double swipeTRBL;
     private int score = 0;
 
+    private TimerUtils timerUtils;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -43,8 +45,7 @@ public class FastTapPlayFragment extends Fragment {
         LinearLayout linearLayoutToTap = view.findViewById(R.id.fast_tap_play_linear_layout);
         textViewScore = view.findViewById(R.id.tv_fasttap_score);
         textViewScore.setText(String.valueOf(score));
-
-        if(this.getArguments().getString("game") == "Fast Tap"){
+        if(this.getArguments().getString("game").equals(getString(R.string.fast_tap_name))){
             tapOrLongTap = tapRandom(view);
 
             linearLayoutToTap.setOnClickListener(new View.OnClickListener() {
@@ -109,13 +110,13 @@ public class FastTapPlayFragment extends Fragment {
         }
 
 
-        TimerUtils timer = new TimerUtils(textViewTimer) {
+        timerUtils = new TimerUtils(textViewTimer) {
             @Override
             protected void endGame() {
                 finishGame();
             }
         };
-        timer.startTimer();
+        timerUtils.startTimer();
     }
 
     public int tapRandom(View view){
@@ -158,5 +159,6 @@ public class FastTapPlayFragment extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
+        timerUtils.stopTimer();
     }
 }

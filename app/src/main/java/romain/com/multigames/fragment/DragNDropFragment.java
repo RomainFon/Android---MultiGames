@@ -32,6 +32,8 @@ public class DragNDropFragment extends Fragment {
     private TextView textViewScore;
     private RelativeLayout randomZone;
 
+    private TimerUtils timerUtils;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -69,13 +71,13 @@ public class DragNDropFragment extends Fragment {
         backgroundGradient = (GradientDrawable)shapeDrag.getBackground();
         randomColor(view, backgroundGradient);
 
-        TimerUtils timer = new TimerUtils(textViewTimer) {
+        timerUtils = new TimerUtils(textViewTimer) {
             @Override
             protected void endGame() {
                 finishGame();
             }
         };
-        timer.startTimer();
+        timerUtils.startTimer();
     }
 
     public void randomColor(View view, GradientDrawable backgroundGradient){
@@ -146,5 +148,11 @@ public class DragNDropFragment extends Fragment {
         float heightRandom = (int)(Math.random() * height);
         shapeDrag.setX(widthRandom);
         shapeDrag.setY(heightRandom);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        timerUtils.stopTimer();
     }
 }

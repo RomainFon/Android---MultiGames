@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
                     case 1:
                         return "Swipe";
                     case 2:
-                        return "FastTap";
+                        return "Fast Tap";
                     case 3:
                         return "IpacGame";
                     case 4:
@@ -85,9 +85,13 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
         List<Fragment> fragments = getSupportFragmentManager().getFragments();
         for(Fragment fragment : fragments){
             for(Fragment subFragment : fragment.getChildFragmentManager().getFragments()){
-                if(subFragment.getTag() != null && subFragment.getTag().equals(this.TAGFASTTAP)){
+                if(subFragment.getTag() != null && subFragment.getTag().equals(getString(R.string.fast_tap_name))){
                     subFragment.getFragmentManager().popBackStack();
-                }else if(subFragment.getTag() != null && subFragment.getTag().equals(this.TAGSWIPE)){
+                }else if(subFragment.getTag() != null && subFragment.getTag().equals(getString(R.string.swipe_name))){
+                    subFragment.getFragmentManager().popBackStack();
+                }else if(subFragment.getTag() != null && subFragment.getTag().equals(getString(R.string.ipac_games_name))){
+                    subFragment.getFragmentManager().popBackStack();
+                }else if(subFragment.getTag() != null && subFragment.getTag().equals(getString(R.string.drag_n_drop_name))){
                     subFragment.getFragmentManager().popBackStack();
                 }
             }
@@ -120,10 +124,10 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
     }
 
     public BeginGameFragment setBundleNameToFragment(String gameName){
-        BeginGameFragment beginGameDragNDrop = new BeginGameFragment();
-        Bundle bundleDragNDrop = new Bundle();
-        bundleDragNDrop.putString("name", gameName);
-        beginGameDragNDrop.setArguments(bundleDragNDrop);
-        return beginGameDragNDrop;
+        BeginGameFragment beginGameFragment = new BeginGameFragment();
+        Bundle bundleFragment = new Bundle();
+        bundleFragment.putString("name", gameName);
+        beginGameFragment.setArguments(bundleFragment);
+        return beginGameFragment;
     }
 }
