@@ -51,6 +51,12 @@ public class BeginGameFragment extends Fragment {
                     bundle.putString("game", gameName);
                     fragment.setArguments(bundle);
                     ActivityUtils.addFragmentToActivity(BeginGameFragment.this, fragment, R.id.begin_linear_layout, gameName);
+                }else if(gameName.equals(getString(R.string.ipac_games_name))){
+                    IpacGameFragment fragment = new IpacGameFragment();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("game", gameName);
+                    fragment.setArguments(bundle);
+                    ActivityUtils.addFragmentToActivity(BeginGameFragment.this, fragment, R.id.begin_linear_layout, gameName);
                 }
             }
         });

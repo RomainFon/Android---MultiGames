@@ -6,21 +6,58 @@
     android:gravity="center_horizontal"
     android:background="@color/colorWhite">
 
+    <TextView
+        android:id="@+id/ipac_game_main_number_try"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ipac_game_number_try"
+        android:layout_marginTop="20dp"
+        android:textSize="30sp"
+        android:textColor="@color/colorPrimaryDark"
+        />
+
     <Space
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"/>
+        android:layout_weight="1"/>
 
-    <TextView
+    <EditText
+        android:id="@+id/ipac_game_main_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/ipac_games_name"
-        android:textSize="30sp"
+        android:hint="@string/ipac_game_number_enter"
+        android:inputType="number"
+        android:gravity="center"
+        android:maxLength="3"
         android:textColor="@color/colorPrimaryDark"/>
 
     <Space
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"/>
+        android:layout_weight="1"/>
+
+    <TextView
+        android:id="@+id/ipac_game_main_more_or_less"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textColor="@color/colorPrimaryDark" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <Button
+        android:id="@+id/ipac_game_btn_valide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ipac_game_btn_valide"
+        android:layout_marginBottom="20dp"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorWhite"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"/>
 
 </LinearLayout>

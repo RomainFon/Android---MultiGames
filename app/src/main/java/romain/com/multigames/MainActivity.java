@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
         fragments.add(setBundleNameToFragment(getString(R.string.drag_n_drop_name)));
         fragments.add(setBundleNameToFragment(getString(R.string.swipe_name)));
         fragments.add(setBundleNameToFragment(getString(R.string.fast_tap_name)));
-        fragments.add(new IpacGameFragment());
+        fragments.add(setBundleNameToFragment(getString(R.string.ipac_games_name)));
         fragments.add(new SettingsFragment());
 
         FragmentStatePagerAdapter adpater = new FragmentStatePagerAdapter(getSupportFragmentManager()) {

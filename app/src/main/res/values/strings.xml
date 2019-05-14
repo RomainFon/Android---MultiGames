@@ -25,4 +25,10 @@
     <string name="fast_tap_score">Score: %d</string>
     <string name="fast_tap_score_end">%d</string>
     <string name="fast_tap_score_text_end">Votre score est de</string>
+
+    <string name="ipac_game_number_try">Il vous reste %d essais !</string>
+    <string name="ipac_game_number_enter">Entrez un nombre</string>
+    <string name="ipac_game_more">C\'est plus</string>
+    <string name="ipac_game_less">C\'est moins</string>
+    <string name="ipac_game_btn_valide">Valider</string>
 </resources>
