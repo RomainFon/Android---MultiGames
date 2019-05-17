@@ -18,7 +18,7 @@ import romain.com.multigames.adapter.SettingsAdapter;
 
 public class SettingsFragment extends Fragment {
 
-    private RecyclerView recyclerView;
+    public RecyclerView recyclerView;
 
     @Nullable
     @Override

@@ -14,6 +14,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
+import romain.com.multigames.DetailPlayerActivity;
 import romain.com.multigames.MainActivity;
 import romain.com.multigames.R;
 import romain.com.multigames.manager.PlayerManager;
@@ -44,12 +45,23 @@ public class PlayerAdapter extends RecyclerView.Adapter<PlayerAdapter.ViewHolder
         final Player player = players.get(position);
         viewHolder.firstName.setText(player.getFirstname());
         viewHolder.lastname.setText(player.getLastname());
+        System.out.println("img");
+        System.out.println(player.getPicture());
         Picasso.get().load(player.getPicture()).into(viewHolder.image);
+
         viewHolder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 PlayerManager.getInstance().setPlayer(player);
                 ActivityUtils.launchActivity(activity, MainActivity.class);
+            }
+        });
+        viewHolder.linearLayout.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                PlayerManager.getInstance().setPlayer(player);
+                ActivityUtils.launchActivity(activity, DetailPlayerActivity.class);
+                return false;
             }
         });
     }

@@ -35,7 +35,6 @@ public class SettingsAdapter extends RecyclerView.Adapter<SettingsAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
         viewHolder.settingGameName.setText(this.games.get(position));
-        PlayerManager.getInstance().getPlayer().getScoreFastTap();
         switch (position) {
             case 0:
                 viewHolder.settingsGameScore.setText(Integer.toString(PlayerManager.getInstance().getPlayer().getScoreDragNDrop()));
@@ -59,13 +58,11 @@ public class SettingsAdapter extends RecyclerView.Adapter<SettingsAdapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        private ImageView settingsGameBest;
         private TextView settingGameName;
         private TextView settingsGameScore;
 
         ViewHolder(View itemView) {
             super(itemView);
-            settingsGameBest = itemView.findViewById(R.id.settings_game_best);
             settingGameName = itemView.findViewById(R.id.settings_game_name);
             settingsGameScore = itemView.findViewById(R.id.settings_game_score);
         }

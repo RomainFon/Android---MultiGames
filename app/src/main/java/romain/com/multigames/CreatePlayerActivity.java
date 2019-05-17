@@ -25,6 +25,7 @@ import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Objects;
 
 import io.realm.Realm;
 import io.realm.RealmQuery;
@@ -133,9 +134,8 @@ public class CreatePlayerActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_PICK_PICTURE && resultCode == RESULT_OK) {
-            Uri uri = data.getData();
-            Picasso.get().load(uri).into(imageView);
-            picture = uri.toString();
+            Picasso.get().load(data.getData().toString()).into(imageView);
+            picture = data.getData().toString();
         }
     }
 

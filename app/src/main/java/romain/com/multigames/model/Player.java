@@ -107,4 +107,5 @@ public class Player extends RealmObject{
     public void setScoreIpacGame(int scoreIpacGame) {
         this.scoreIpacGame = scoreIpacGame;
     }
+
 }

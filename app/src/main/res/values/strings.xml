@@ -34,4 +34,9 @@
 
     <string name="settings_deco">Deconnexion</string>
     <string name="settings_change_player">Changer de joueur</string>
+
+    <string name="detail_player_title">Profil</string>
+    <string name="detail_player_modify">Modifier le joueur</string>
+    <string name="detail_player_delete">Supprimer le joueur</string>
+
 </resources>
